@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.container {
+    background-color: #666;
+}
+
+.title {
+    text-align: center;
+}
+
+.table {
+    display: flex;
+    background-color: black;
+}
+
+.players {
+    width: 500px;
+}
+
+.player {
+    margin: 1rem;
+    padding: .2rem;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-name {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 16px;
+}
+
+.avatar {
+    height: 80px;
+    border-radius: 5px;
+}
+
+.line {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 16px;
+}
+
+.board {
+    background: #aaa;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    padding: 2px;
+}
+
+.dot {
+    background-color: #333;
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+}
