@@ -5,23 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DnD Jinpa</title>
 </head>
 <body>
     <div class="container">
-        <h2 class="title">DnD Jinpa - Chapter 1</h2>
+        <h2 class="title">DnD Jinpa - Chapter 1 <button class="play-button"><i class="fa-solid fa-play"></i></button></h2>
         <div class="table">
             <div class="players">
-                <div class="player">
+                <div id="master" class="player">
                     <div class="player-card">
                         <img src="char/master.jpg" alt="" class="avatar">
                         <div class="player-name">Master</div>
                     </div>
 
-                    <div class="line">때는 31세기 진파계는 혼돈에 빠져든다.</div>
+                    <div class="line"></div>
+                </div>
+                <div id="connal" class="player">
+                    <div class="player-card">
+                        <img src="char/connal.jpg" alt="" class="avatar">
+                        <div class="player-name">꼰날 장군</div>
+                    </div>
+
+                    <div class="line">...</div>
+                </div>
+                <div id="hellga" class="player">
+                    <div class="player-card">
+                        <img src="char/hellga.jpg" alt="" class="avatar">
+                        <div class="player-name">헬가 대령</div>
+                    </div>
+
+                    <div class="line">...</div>
                 </div>
 
             </div>
+           
             <div class="board">
                 <div class="dot dot-01"></div>
                 <div class="dot dot-02"></div>
@@ -171,6 +189,6 @@
             </div>
         </div>
     </div>
-
+    <script src="script.js" type="module"></script>
 </body>
 </html>

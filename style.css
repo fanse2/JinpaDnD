@@ -22,6 +22,7 @@ body {
 
 .title {
     text-align: center;
+    /* display: flex; */
 }
 
 .table {
@@ -40,6 +41,7 @@ body {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    transition: display 1.5s ease;
 
 }
 
@@ -62,6 +64,12 @@ body {
 .line {
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 16px;
+    animation: moveup 1s linear;
+}
+
+@keyframes moveup {
+    from {transform: translateY(80%);}
+    to {transform: translateY(0%);}
 }
 
 .board {
@@ -78,3 +86,21 @@ body {
     height: 50px;
     margin: 2px;
 }
+
+.play-button {
+    border: 1px solid black;
+    border-radius: 3px;
+    background: none;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: beige;
+}
+
+#connal, #hellga {
+    display: none;
+}
+
