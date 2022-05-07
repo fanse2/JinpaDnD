@@ -1,30 +1,54 @@
+const DURATION = 3500
+
 const playButton = document.querySelector('.play-button')
 const master = document.querySelector('#master')
 const hellga = document.querySelector('#hellga')
 const connal = document.querySelector('#connal')
 
-const masterLine = [
-    '때는 30세기 무렵, 진파계는 혼돈에 빠졌다.',
-    '헬가대령은 꼰날장군의 게릴라부대를 요격하기 위해 출정.',
-    '드랍쉽이 자기장덫에 잡히고 암호를 모르면 공격을 당하게 된다',
-    '포스가 함께하시길~!'
+
+const storyLine = [
+    {
+        user: master,
+        line: '때는 30세기 무렵, 진파계는 혼돈에 빠졌다.'
+    },
+    {
+        user: master,
+        line: '헬가대령은 꼰날장군의 게릴라부대를 요격하기 위해 출정.'
+    },
+    {
+        user: master,
+        line: '드랍쉽이 자기장덫에 잡히고 암호를 모르면 공격을 당하게 된다'
+    },
+    {
+        user: master,
+        line: '포스가 함께하시길~!'
+    },
+    {
+        user: connal,
+        line: '케찰 지역을 접수하라!'
+    },
+    {
+        user: connal,
+        line: '진격하라~!'
+    },
+    {
+        user: hellga,
+        line: '드랍쉽의 지원이 오고 있다.'
+    },
+    {
+        user: hellga,
+        line: '지옥의 빨간맛을 보여주마!'
+    },
 ]
 
-const connalLine = [
-    '케찰 지역을 접수하라!',
-    '진격하라~!'
-]
 
-const hellgaLine = [
-    '드랍쉬의 지원이 오고 있다.',
-    '지옥의 빨간맛을 보여주마!'
-]
-
-let maxLine = masterLine.length
-let storyInt
 
 function pitchLine(sentence,playerCard) {
     let line
+
+    if(playerCard.style.display == '') {
+        playerCard.style.display = 'flex'
+    }
 
     playerCard.childNodes.forEach(el=>{
         if(el.className == 'line'){
@@ -39,31 +63,13 @@ function pitchLine(sentence,playerCard) {
 
 }
 
-async function story() {
-    // Master saying
-    let masterPromise = new Promise(resolve => {
-        pitchLine(masterLine.shift(),master)
-        storyInt = setInterval(nextLine,3000,masterLine,master)
-        setTimeout(function() {resolve("flex");}, 12000);
+function story() {
+    let i = 0
+
+    storyLine.forEach(v=>{
+        setTimeout(pitchLine,i*DURATION,v.line,v.user)
+        i++
     })
-
-
-    // Connal saying
-    connal.style.display = await masterPromise
-    let connalPromise = new Promise(resolve => {
-        pitchLine(connalLine.shift(),connal)
-        storyInt = setInterval(nextLine,3000,connalLine,connal)
-        setTimeout(function() {resolve("flex");}, 6500);
-    })
-
-    // Hellga saying
-    hellga.style.display = await connalPromise
-    let hellgaPromise = new Promise(resolve => {
-        pitchLine(connalLine.shift(),hellga)
-        storyInt = setInterval(nextLine,3000,hellgaLine,hellga)
-        setTimeout(function() {resolve("flex");}, 11000);
-    })
-
 
 }
 
